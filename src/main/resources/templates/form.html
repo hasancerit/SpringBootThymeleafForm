@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	POST ILE AYNI URL
+	<br/>
+	<form method="post" action = "submitpost">
+		<input type="text" name="msg"></input>
+		<button type="submit"> Message Gonder POST</button>
+	</form>
+	<br/><br/>
+	
+	POST ILE AYNI FARKLI URL
+	<br/>
+	<form method="post" action = "/submitpostdif">
+		<input type="text" name="msg"></input>
+		<button type="submit"> Message Gonder POST</button>
+	</form>
+	<br/><br/>
+	
+	GET ILE
+	<br/>
+		<form method="get" action = "/submitget">
+		<input type="text" name="msg"></input>
+		<button type="submit"> Message Gonder GET</button>
+	</form>
+	<br/><br/>
+	
+	MODEL CLASS ILE
+	<br/>
+	<form method="post" th:object="${message}">
+		<input type="text" th:field="*{msg}" />
+		<button type="submit"> Message Gonder Model</button>
+	</form>
+	
+</body>
+</html>
